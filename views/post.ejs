@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DEMO</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/imp.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+	<%- include partials/navbar.ejs %>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-6">
+				<img src="<%= post.image_url %>" alt="image" class="postDetail--img">
+			</div>
+			<div class="col-sm-6 col-md-6">
+				<p>
+					<ul style="font-size: 20px">
+					    <li>Name: <%= post.name %></li>
+					    <li>Tagline: <%= post.tagline %></li>
+					    <li>Description: <%= post.description %></li>
+					    <li>First brewed: <%= post.first_brewed %></li>
+					    <li>Volumn:<br/>
+					    	<span class="glyphicon glyphicon-asterisk"></span>Value: <%= post.volume.value %><br/>
+					    	<span class="glyphicon glyphicon-asterisk"></span>Unit : <%= post.volume.unit %>
+					    </li>
+					</ul>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<center><a href="/getdata">Return to the list</a></center>
+		</div>
+		
+	</div>
+</body>
+</html>
