@@ -29,33 +29,10 @@
 				<% } %>
 			</div>
 		</div>
-		<div id="paginate">
-			<center>
-				<% if (numPage < 4) { %>
-					<% for (let i = 1; i <= numPage; i++) { %>
-						<a class="page" href="#"><%= i %></a>
-					<% } %>
-				<% } else { %>
-					<% if (pageId != 1 && pageId != 2) { %>
-						<a class="page" href="#">Previous</a>
-					<% } if (pageId == 1) { %>
-						<a class="page" href="#">1</a>
-						<a class="page" href="#">2</a>
-						<a class="page" href="#">3</a>
-					<% } else if (pageId == numPage) { %>
-						<a class="page" href="#"><%= parseInt(numPage) - 2 %></a>
-						<a class="page" href="#"><%= parseInt(numPage) - 1 %></a>
-						<a class="page" href="#"><%= parseInt(numPage) %></a>
-					<% } else { %>
-						<a class="page" href="#"><%= parseInt(pageId) - 1 %></a>
-						<a class="page" href="#"><%= parseInt(pageId) %></a>
-						<a class="page" href="#"><%= parseInt(pageId) + 1 %></a>
-					<% } if (pageId != numPage && pageId != parseInt(numPage) - 1) { %>
-						<a class="page" href="#">Next</a>
-					<% } %>
-				<% } %>
-			</center>
+		<div class="row">
+			<center><a href="/">Return to the list</a></center>
 		</div>
+		
 	</div>
 </body>
 </html>
