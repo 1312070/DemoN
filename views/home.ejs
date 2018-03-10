@@ -7,55 +7,20 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/imp.js"></script>
+	<script src="/bootpag.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
 	<%- include partials/navbar.ejs %>
 	<div class="container">
+		<%- include partials/searchbar.ejs %>
 		<div id="content">
-			<div class="row">
-				<% for(var i = 0; i < data.length; i++){ %>
-					<div class="col-sm-6 col-md-4">
-					    <div class="thumbnail">
-					      <img src="<%= data[i].image_url %>" alt="image" class="post--img-small">
-					      <div class="caption">
-					        <h3 class="post--name"><%= data[i].name %></h3>
-					        <p class="post--description"><%= data[i].description %></p>
-					        <p><a href="#" class="btn btn-primary" role="button">Like</a> <a class="btn btn-default see-more" role="button" id="<%= data[i].id %>">See more</a></p>
-					      </div>
-					    </div>
-					</div>
-				<% } %>
-			</div>
+			<%- include partials/content.ejs %>
 		</div>
-		<div id="paginate">
-			<center>
-				<% if (numPage < 4) { %>
-					<% for (let i = 1; i <= numPage; i++) { %>
-						<a class="page" href="#"><%= i %></a>
-					<% } %>
-				<% } else { %>
-					<% if (pageId != 1 && pageId != 2) { %>
-						<a class="page" href="#">Previous</a>
-					<% } if (pageId == 1) { %>
-						<a class="page" href="#">1</a>
-						<a class="page" href="#">2</a>
-						<a class="page" href="#">3</a>
-					<% } else if (pageId == numPage) { %>
-						<a class="page" href="#"><%= parseInt(numPage) - 2 %></a>
-						<a class="page" href="#"><%= parseInt(numPage) - 1 %></a>
-						<a class="page" href="#"><%= parseInt(numPage) %></a>
-					<% } else { %>
-						<a class="page" href="#"><%= parseInt(pageId) - 1 %></a>
-						<a class="page" href="#"><%= parseInt(pageId) %></a>
-						<a class="page" href="#"><%= parseInt(pageId) + 1 %></a>
-					<% } if (pageId != numPage && pageId != parseInt(numPage) - 1) { %>
-						<a class="page" href="#">Next</a>
-					<% } %>
-				<% } %>
-			</center>
-		</div>
+		<center>
+			<p id="pagination-here"></p>
+		</center>
 	</div>
 </body>
 </html>

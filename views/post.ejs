@@ -15,18 +15,18 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 col-md-6">
-				<img src="<%= post.image_url %>" alt="image" class="postDetail--img">
+				<img src="<%= post[0].image_url %>" alt="image" class="postDetail--img">
 			</div>
 			<div class="col-sm-6 col-md-6">
 				<p>
 					<ul style="font-size: 20px">
-					    <li>Name: <%= post.name %></li>
-					    <li>Tagline: <%= post.tagline %></li>
-					    <li>Description: <%= post.description %></li>
-					    <li>First brewed: <%= post.first_brewed %></li>
+					    <li>Name: <%= post[0].name %></li>
+					    <li>Tagline: <%= post[0].tagline %></li>
+					    <li>Description: <%= post[0].description %></li>
+					    <li>First brewed: <%= post[0].first_brewed %></li>
 					    <li>Volumn:<br/>
-					    	<span class="glyphicon glyphicon-asterisk"></span>Value: <%= post.volume.value %><br/>
-					    	<span class="glyphicon glyphicon-asterisk"></span>Unit : <%= post.volume.unit %>
+					    	<span class="glyphicon glyphicon-asterisk"></span>Value: <%= post[0].volume.value %><br/>
+					    	<span class="glyphicon glyphicon-asterisk"></span>Unit : <%= post[0].volume.unit %>
 					    </li>
 					</ul>
 				</p>

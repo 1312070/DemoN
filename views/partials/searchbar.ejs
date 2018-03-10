@@ -1,0 +1,34 @@
+<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="panel-title">Search</h3>
+			</div>
+			<div class="panel-body">
+				<form action="/search" method="get" accept-charset="utf-8">
+					<div class="row">
+						<div class="col-sm-4 col-dm-4">
+							<div class="well">
+								ABV greater than:<input type="text" class="form-control" name="abv_gt"></input>
+								ABV less than:<input type="text" class="form-control" name="abv_lt"></input>
+							</div>
+						</div>
+						<div class="col-sm-4 col-dm-4">
+							<div class="well">
+								IBU greater than:<input type="text" class="form-control" name="ibu_gt"></input>
+								IBU less than:<input type="text" class="form-control" name="ibu_lt"></input>
+							</div>
+						</div>
+						<div class="col-sm-4 col-dm-4">
+							<div class="well">
+								EBC greater than:<input type="text" class="form-control" name="ebc_gt"></input>
+								EBC less than:<input type="text" class="form-control" name="ebc_lt"></input>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 col-md-12">
+							<input type="submit" class="btn btn-success btn-block" id="search_button" value="Search"/>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
