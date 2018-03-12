@@ -15,8 +15,6 @@
     "request": "^2.83.0"
   },
   "dependencies": {
-    "arraysearch": "^1.2.0",
-    "json-query": "^2.2.2",
-    "pagination": "^0.4.4"
+    "json-query": "^2.2.2"
   }
 }

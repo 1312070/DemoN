@@ -1,6 +1,6 @@
 var request = require('request');
 
-var data, numPage, firstIndex, endIndex;
+var data;
 
 function compareAZ(a,b) {
   if (a.name < b.name)
@@ -20,18 +20,23 @@ function compareZA(a,b) {
 
 module.exports = function(app){
 	app.get('/', function(req, res){
+		var page = 1;
+		var total = 26;
 		var url = 'https://api.punkapi.com/v2/beers?per_page=9&';
 		if (req.query) {
 			var query = req.query;
 			Object.keys(query).forEach(key => {
-				if (query[key])
+				if (query[key]) {
 					url = url + key + "=" + query[key] + "&";
+					if (key == 'page')
+						page = query[key];
+				}
 			});
 		}
 
 		request(url, function(err, response, body){
 			data = JSON.parse(body);
-			res.render('home', {data: data});
+			res.render('home', {data: data, page: page, total: total});
 		});
 	});
 
@@ -44,18 +49,23 @@ module.exports = function(app){
 	});
 
 	app.get('/search', function(req,res){
+		var page = 1;
+		var total = 26;
 		var url = 'https://api.punkapi.com/v2/beers?per_page=9&';
 		if (req.query) {
 			var query = req.query;
 			Object.keys(query).forEach(key => {
-				if (query[key])
+				if (query[key]) {
 					url = url + key + "=" + query[key] + "&";
+					if (key == 'page')
+						page = query[key];
+				}
 			});
 		}
 		
 		request(url, function(err, response, body){
 			data = JSON.parse(body);
-			res.render('home', {data: data});
+			res.render('home', {data: data, page: page, total: total});
 		});
 	})
 };

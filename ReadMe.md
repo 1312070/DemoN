@@ -15,5 +15,5 @@
 
 ##API: https://api.punkapi.com/v2/beers
 
-##DEMO: https://github.com/1312070/DemoN/blob/master/Demo.gif
+##DEMO: https://github.com/1312070/DemoN/blob/master/DemoN.gif
 

@@ -1,0 +1,21 @@
+<div class="pagination">
+				<% if (total < 4) { %>
+					<% for (let i = 1; i <= parseInt(total); i++) { %>
+						<a class="btn btn-primary page"><%= i %></a>
+					<% } %>
+				<% } else {%>
+					<% if (page == 1 || page == 2) { %>
+						<a class="btn btn-primary page">1</a>
+						<a class="btn btn-primary page">2</a>
+						<a class="btn btn-primary page">3</a>
+					<% } else if (page == total || page == parseInt(total) - 1) { %>
+						<a class="btn btn-primary page"><%= parseInt(total) - 2 %></a>
+						<a class="btn btn-primary page"><%= parseInt(total) - 1 %></a>
+						<a class="btn btn-primary page"><%= parseInt(total) %></a>
+					<% } else { %>
+						<a class="btn btn-primary page"><%= parseInt(page) - 1 %></a>
+						<a class="btn btn-primary page"><%= parseInt(page) %></a>
+						<a class="btn btn-primary page"><%= parseInt(page) + 1 %></a>
+					<% } %>
+				<% } %>
+			</div>
